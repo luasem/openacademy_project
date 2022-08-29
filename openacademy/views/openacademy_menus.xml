@@ -1,0 +1,10 @@
+<odoo>
+    <!-- Nombre como lo muestra la app en el menú -->
+    <menuitem id="openacademy_menu_root" name="Open Academy">
+        <!-- Nombre de las opciones en la barra que aparecen dentro de la app -->
+        <menuitem id="openacademy_first_level_menu" name="Courses">
+            <!-- Acciones dentro de el submenú de todo relacionado a Courses -->
+            <menuitem id="openacademy_course_menu_action" action="openacademy_course_list" />
+        </menuitem>
+    </menuitem>
+</odoo>

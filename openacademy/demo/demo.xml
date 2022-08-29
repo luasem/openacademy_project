@@ -1,0 +1,28 @@
+<odoo>
+
+  <record id="object0" model="openacademy.course">
+    <field name="title">Algebra</field>
+    <field name="description">Beginners course for Algebra</field>
+  </record>
+
+  <record id="object1" model="openacademy.course">
+    <field name="title">Spanish</field>
+    <field name="description">Level 200 Spanish classes</field>
+  </record>
+
+  <record id="object2" model="openacademy.course">
+    <field name="title">Calculus</field>
+    <field name="description">Differential Calculus applications</field>
+  </record>
+
+  <record id="object3" model="openacademy.course">
+    <field name="title">OOP</field>
+    <field name="description">Object Oriented Programming with JavaScript</field>
+  </record>
+
+  <record id="object4" model="openacademy.course">
+    <field name="title">Python</field>
+    <field name="description">Introductary Python Classes for advanced programmers</field>
+  </record>
+
+</odoo>
