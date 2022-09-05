@@ -1,0 +1,47 @@
+<odoo>
+
+    <record id="openacademy_session_action" model="ir.actions.act_window">
+        <field name="name">Session List</field>
+        <field name="res_model">openacademy.session</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="openacademy_session_view_tree" model="ir.ui.view">
+        <field name="name">openacademy.session.view.tree</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="course_id" />
+                <field name="name" />
+                <field name="instructor_id" />
+                <field name="start_date" />
+                <field name="duration" />
+                <field name="seats" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="openacademy_session_view_form" model="ir.ui.view">
+        <field name="name">openacademy.session.view.form</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <form string="Session">
+                <sheet>
+                    <group col="2">
+                        <field name="course_id" colspan="1"/>
+                        <field name="instructor_id" colspan="1"/>
+                        <field name="name" colspan="1"/>
+                        <field name="start_date" colspan="1"/>
+                        <field name="duration" colspan="1"/>
+                        <field name="seats" colspan="1"/>
+                    </group>
+                    <notebook>
+                        <page name="attendees" string="Atendees">
+                            <field name="attendee_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
