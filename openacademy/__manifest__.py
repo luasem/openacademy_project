@@ -25,5 +25,6 @@
         'views/openacademy_session_views.xml',
         'views/openacademy_course_views.xml',
         'views/openacademy_menus.xml',
+        'views/res_partner_views.xml',
     ],
 }

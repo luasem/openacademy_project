@@ -14,9 +14,10 @@
                 <field name="course_id" />
                 <field name="name" />
                 <field name="instructor_id" />
-                <field name="start_date" />
-                <field name="duration" />
+                <field name="occupancy" widget='progressbar' />
                 <field name="seats" />
+                <field name="duration" />
+                <field name="start_date" />
             </tree>
         </field>
     </record>
@@ -28,12 +29,14 @@
             <form string="Session">
                 <sheet>
                     <group col="2">
-                        <field name="course_id" colspan="1"/>
-                        <field name="instructor_id" colspan="1"/>
-                        <field name="name" colspan="1"/>
-                        <field name="start_date" colspan="1"/>
-                        <field name="duration" colspan="1"/>
-                        <field name="seats" colspan="1"/>
+                        <field name="course_id" colspan="1" />
+                        <field name="start_date" colspan="1" />
+                        <field name="name" colspan="1" />
+                        <field name="duration" colspan="1" />
+                        <field name="instructor_id" colspan="1" />
+                        <field name="seats" colspan="1" />
+                        <field name="occupancy" colspan='2' widget='progressbar' />
+                        <field name="active" />
                     </group>
                     <notebook>
                         <page name="attendees" string="Atendees">
