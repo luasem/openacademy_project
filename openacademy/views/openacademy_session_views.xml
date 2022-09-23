@@ -3,21 +3,22 @@
     <record id="openacademy_session_action" model="ir.actions.act_window">
         <field name="name">Session List</field>
         <field name="res_model">openacademy.session</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,calendar,gantt,form</field>
     </record>
 
     <record id="openacademy_session_view_tree" model="ir.ui.view">
         <field name="name">openacademy.session.view.tree</field>
         <field name="model">openacademy.session</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree decoration-primary="duration &lt; 5" decoration-danger="duration &gt; 15">
                 <field name="course_id" />
                 <field name="name" />
                 <field name="instructor_id" />
-                <field name="occupancy" widget='progressbar' />
+                <field name="taken_seats" widget='progressbar' />
                 <field name="seats" />
                 <field name="duration" />
                 <field name="start_date" />
+                <field name="end_date" />
             </tree>
         </field>
     </record>
@@ -35,8 +36,9 @@
                         <field name="duration" colspan="1" />
                         <field name="instructor_id" colspan="1" />
                         <field name="seats" colspan="1" />
-                        <field name="occupancy" colspan='2' widget='progressbar' />
+                        <field name="taken_seats" colspan='2' widget='progressbar' />
                         <field name="active" />
+                        <field name="end_date" />
                     </group>
                     <notebook>
                         <page name="attendees" string="Atendees">
@@ -45,6 +47,26 @@
                     </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="openacademy_session_view_calendar" model="ir.ui.view">
+        <field name="name">openacademy.session.view.calendar</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <calendar string="Sessions" date_start="start_date" date_stop="end_date" color="course_id">
+                <field name="name" />
+            </calendar>
+        </field>
+    </record>
+
+
+    <record id="openacademy_session_view_gantt" model="ir.ui.view">
+        <field name="name">openacademy.session.view.gantt</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <gantt string="Sessions" date_start="start_date" date_stop="end_date" default_group_by='instructor_id'>
+            </gantt>
         </field>
     </record>
 </odoo>
